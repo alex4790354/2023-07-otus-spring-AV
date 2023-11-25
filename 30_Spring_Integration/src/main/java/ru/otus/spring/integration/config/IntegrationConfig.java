@@ -4,35 +4,38 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.integration.dsl.*;
 import org.springframework.integration.scheduling.PollerMetadata;
-import ru.otus.spring.integration.domain.Food;
-import ru.otus.spring.integration.services.KitchenService;
+import ru.otus.spring.integration.service.KiService;
 
 @Configuration
 public class IntegrationConfig {
-
-	@Bean
-	public MessageChannelSpec<?, ?> itemsChannel() {
-		return MessageChannels.queue(10);
-	}
-
-	@Bean
-	public MessageChannelSpec<?, ?> foodChannel() {
-		return MessageChannels.publishSubscribe();
-	}
 
 	@Bean(name = PollerMetadata.DEFAULT_POLLER)
 	public PollerSpec poller() {
 		return Pollers.fixedRate(100).maxMessagesPerPoll(2);
 	}
 
+
+//////////////////////////////// cbrChannel  ratesChannel
+
 	@Bean
-	public IntegrationFlow cafeFlow(KitchenService kitchenService) {
-		return IntegrationFlow.from(itemsChannel())
+	public MessageChannelSpec<?, ?> cbrChannel() {
+		return MessageChannels.queue(10);
+	}
+
+	@Bean
+	public MessageChannelSpec<?, ?> ratesChannel() {
+		return MessageChannels.publishSubscribe();
+	}
+
+	@Bean
+	public IntegrationFlow rateFlow(KiService kiService) {
+		return IntegrationFlow.from(cbrChannel())
 				.split()
-				.handle(kitchenService, "cook")
-				.<Food, Food>transform(f -> new Food(f.getName().toUpperCase()))
+				.handle(kiService, "convert")
+				//.<Food, Food>transform(f -> new Food(f.getName().toUpperCase()))
 				.aggregate()
-				.channel(foodChannel())
+				.channel(ratesChannel())
 				.get();
 	}
+
 }
