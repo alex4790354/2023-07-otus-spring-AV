@@ -35,7 +35,6 @@ public class IntegrationConfig {
 				.split()
 				.handle(ratesService, "convert")
 				.filter(RateDto.class, rateDto -> rateDto.getValue() > 50)
-				.aggregate()
 				.channel(ratesChannel())
 				.get();
 	}
