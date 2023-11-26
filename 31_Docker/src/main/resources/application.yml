@@ -13,3 +13,7 @@ feign:
   retryAfterException:
     maxAttempts: ${CBR_SERVICE_MAX_ATTEMPTS_EXCEPTION:3}
     delay: ${CBR_SERVICE_DELAY_EXCEPTION:180000}
+
+spring:
+  main:
+    allow-bean-definition-overriding: true

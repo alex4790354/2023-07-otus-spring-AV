@@ -4,6 +4,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
 @Data
 @AllArgsConstructor
 public class RateDto {
@@ -31,5 +34,10 @@ public class RateDto {
 
     @JsonProperty("date")
     private String dateAsString;  //  in "yyyy-MM-dd" format.
+
+    public LocalDate getEffectiveDate() {
+        return LocalDate.parse(dateAsString,
+                DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+    }
 
 }

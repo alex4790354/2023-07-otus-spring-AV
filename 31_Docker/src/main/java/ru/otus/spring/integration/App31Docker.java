@@ -12,10 +12,10 @@ import ru.otus.spring.integration.service.FeedService;
 @EnableRetry
 @EnableFeignClients
 @SpringBootApplication
-public class App30SpringIntegration {
+public class App31Docker {
 
 	public static void main(String[] args) {
-		ConfigurableApplicationContext ctx = SpringApplication.run(App30SpringIntegration.class, args);
+		ConfigurableApplicationContext ctx = SpringApplication.run(App31Docker.class, args);
 
 		FeedService orderService = ctx.getBean(FeedService.class);
 		orderService.startGenerateOrdersLoop();
