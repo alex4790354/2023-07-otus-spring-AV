@@ -11,8 +11,6 @@ import java.util.Collection;
 @MessagingGateway
 public interface RatesGateway {
 
-	// cbrChannel  ratesChannel
-
 	@Gateway(requestChannel = "cbrChannel", replyChannel = "ratesChannel")
 	Collection<RateDto> process(ValCurs valCurs);
 }

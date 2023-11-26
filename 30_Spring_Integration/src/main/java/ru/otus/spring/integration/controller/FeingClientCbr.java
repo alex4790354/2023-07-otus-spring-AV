@@ -1,4 +1,4 @@
-package ru.otus.spring.integration.controller.feing;
+package ru.otus.spring.integration.controller;
 
 import feign.Headers;
 import org.springframework.cloud.openfeign.FeignClient;

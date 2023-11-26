@@ -4,7 +4,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.integration.dsl.*;
 import org.springframework.integration.scheduling.PollerMetadata;
-import ru.otus.spring.integration.service.KiService;
+import ru.otus.spring.integration.service.RatesService;
 
 @Configuration
 public class IntegrationConfig {
@@ -28,12 +28,12 @@ public class IntegrationConfig {
 	}
 
 	@Bean
-	public IntegrationFlow rateFlow(KiService kiService) {
+	public IntegrationFlow rateFlow(RatesService ratesService) {
 		return IntegrationFlow.from(cbrChannel())
 				.split()
-				.handle(kiService, "convert")
+				.handle(ratesService, "convert")
 				//.<Food, Food>transform(f -> new Food(f.getName().toUpperCase()))
-				.aggregate()
+				//.aggregate()
 				.channel(ratesChannel())
 				.get();
 	}
