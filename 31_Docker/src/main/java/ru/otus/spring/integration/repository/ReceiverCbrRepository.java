@@ -59,6 +59,22 @@ public interface ReceiverCbrRepository {
         }
     }
 
+    default void saveRateWithHistory(RateDto rate) {
+
+        RateDtoDb currentRate = findCurrentRateById(rate.getId());
+        if (currentRate == null) {
+            insertNewRate(rate);
+        }
+        else if (rate.getEffectiveDate().isBefore(currentRate.getEffectiveDate())) {
+            upsertRateHistory(rate);
+        }
+        else {
+            archiveCurrentRate(currentRate);
+            updateCurrentRate(rate);
+        }
+
+    }
+
 
     @Select("SELECT id, effective_date, nominal, first_crncy, second_crncy, value, creation_time FROM cbr.currency_rate WHERE id = #{id}")
     @Result(column = "CREATION_TIME", typeHandler = OffsetDateTimeTypeHandler.class)
