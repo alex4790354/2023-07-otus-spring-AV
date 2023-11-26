@@ -4,9 +4,8 @@ package ru.otus.spring.integration.domain;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import ru.otus.spring.integration.constant.DateFormatConstant;
-import ru.otus.spring.integration.domain.xml.ValCurs;
+import generated.daily.ValCurs;
 import ru.otus.spring.integration.utils.DateHelper;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,7 +14,7 @@ public class RatesListDto {
 
 
     @JsonProperty("Foreign CurrencyDto Market Lib")
-    protected List<RateDto> currencyRateList;
+    private List<RateDto> currencyRateList;
 
     public void setRatesFromDailyRateList(ValCurs valCurs) {
         List<RateDto> currencyRateDtoList = new ArrayList<>();

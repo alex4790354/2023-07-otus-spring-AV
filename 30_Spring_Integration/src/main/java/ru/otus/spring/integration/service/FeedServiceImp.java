@@ -8,13 +8,11 @@ import org.springframework.stereotype.Service;
 import ru.otus.spring.integration.constant.DateFormatConstant;
 import ru.otus.spring.integration.controller.FeingClientCbr;
 import ru.otus.spring.integration.domain.RateDto;
-import ru.otus.spring.integration.domain.xml.ValCurs;
 import ru.otus.spring.integration.utils.DateHelper;
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
 import java.util.concurrent.ForkJoinPool;
 import java.util.stream.Collectors;
+import generated.daily.ValCurs;
 
 @Service
 @Slf4j
@@ -22,6 +20,7 @@ import java.util.stream.Collectors;
 public class FeedServiceImp implements FeedService {
 
     private final RatesGateway gateway;
+
     private final FeingClientCbr feingClientCbr;
 
     @Override
@@ -30,7 +29,7 @@ public class FeedServiceImp implements FeedService {
         String vRequestDateAsString = new DateHelper().getTodateDateAsString(DateFormatConstant.CBR_REQUEST.getValue());
 
         ForkJoinPool pool = ForkJoinPool.commonPool();
-        for (int i = 0; i < 2; i++) {
+        for (int i = 0; i < 3; i++) {
             int num = i + 1;
             pool.execute(() -> {
                 ResponseEntity<ValCurs> valCursResponseEntity = feingClientCbr.feinGetRatesOnDate(vRequestDateAsString);
@@ -40,7 +39,7 @@ public class FeedServiceImp implements FeedService {
                         valCursDailyResult.getValute().size()
                         );
                 Collection<RateDto> rates = gateway.process(valCursDailyResult);
-                log.info("{}, Ready food: {}", num, rates.stream()
+                log.info("{}, Ready rates: {}", num, rates.stream()
                         .map(RateDto::getName)
                         .collect(Collectors.joining(",")));
             });

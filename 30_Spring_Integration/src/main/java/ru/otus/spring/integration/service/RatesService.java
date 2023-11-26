@@ -2,12 +2,12 @@ package ru.otus.spring.integration.service;
 
 
 import ru.otus.spring.integration.domain.RateDto;
-import ru.otus.spring.integration.domain.xml.ValCurs;
-import java.util.Collection;
+import generated.daily.ValCurs;
+import java.util.List;
 
 
 public interface RatesService {
 
-    Collection<RateDto> convert(ValCurs valCurs);
+    List<RateDto> convert(ValCurs valCurs);
 
 }

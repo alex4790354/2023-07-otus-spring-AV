@@ -236,4 +236,5 @@ nbdist/
 .history
 
 # End of https://www.gitignore.io/api/java,macos,maven,eclipse,netbeans,intellij,visualstudiocode
-/30_Spring_Integration/backup/
+/30_Spring_Integration/src/main/java/generated/
+/30_Spring_Integration/src/main/java/META-INF/

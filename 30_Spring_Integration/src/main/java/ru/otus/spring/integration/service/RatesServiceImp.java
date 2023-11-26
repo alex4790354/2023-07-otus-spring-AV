@@ -5,11 +5,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import ru.otus.spring.integration.constant.DateFormatConstant;
 import ru.otus.spring.integration.domain.RateDto;
-import ru.otus.spring.integration.domain.xml.ValCurs;
+import generated.daily.ValCurs;
 import ru.otus.spring.integration.utils.DateHelper;
-
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 @Service
@@ -17,10 +15,10 @@ import java.util.List;
 public class RatesServiceImp implements RatesService {
 
     @Override
-    public Collection<RateDto> convert(ValCurs valCurs) {
+    public List<RateDto> convert(ValCurs valCurs) {
         log.info("Convert {} start", valCurs.getDate());
 
-        Collection<RateDto> currencyRateDtoList= new ArrayList<>();
+        List<RateDto> currencyRateDtoList = new ArrayList<>();
         RateDto currencyRateDto;
         for (ValCurs.Valute item : valCurs.getValute()) {
             currencyRateDto = new RateDto(item.getID(),

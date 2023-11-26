@@ -9,20 +9,27 @@ import lombok.Data;
 public class RateDto {
 
     @JsonProperty("id")
-    protected String id;
+    private String id;
+
     @JsonProperty("num_code")
-    protected int numCode;
+    private int numCode;
+
     @JsonProperty("char_code")
-    protected String charCode;
+    private String charCode;
+
     @JsonProperty("nominal")
-    protected long nominal;
+    private long nominal;
+
     @JsonProperty("name")
-    protected String name;
+    private String name;
+
     @JsonProperty("value")
-    protected double value;
+    private double value;
+
     @JsonProperty("vunit_rate")
-    protected double vunitRate;
+    private double vunitRate;
+
     @JsonProperty("date")
-    protected String dateAsString;  //  in "yyyy-MM-dd" format.
+    private String dateAsString;  //  in "yyyy-MM-dd" format.
 
 }
