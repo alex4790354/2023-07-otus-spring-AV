@@ -1,0 +1,15 @@
+logging:
+  level:
+    root: info
+    org.springframework.integration: debug
+
+feign:
+  period-seconds: ${CBR_SERVICE_PERIOD_SECONDS:30}
+  maxPeriod-seconds: ${CBR_SERVICE_MAX_PERIOD_SECONDS:35}
+  maxAttempts: ${CBR_SERVICE_MAX_ATTEMPTS:10}
+  url-client: ${CBR_SERVICE_URL:https://www.cbr.ru}
+  httpclient:
+    connection-timeout: 3000
+  retryAfterException:
+    maxAttempts: ${CBR_SERVICE_MAX_ATTEMPTS_EXCEPTION:3}
+    delay: ${CBR_SERVICE_DELAY_EXCEPTION:180000}
