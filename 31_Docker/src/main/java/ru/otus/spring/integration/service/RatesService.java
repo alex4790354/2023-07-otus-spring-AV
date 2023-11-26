@@ -11,4 +11,6 @@ public interface RatesService {
 
     List<RateDto> convert(ValCurs valCurs);
 
+    void saveToDb(RateDto rateDto);
+
 }

@@ -2,17 +2,22 @@ package ru.otus.spring.integration.service;
 
 
 import generated.daily.ValCurs;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import ru.otus.spring.integration.constant.DateFormatConstant;
 import ru.otus.spring.integration.domain.RateDto;
+import ru.otus.spring.integration.repository.ReceiverCbrRepository;
 import ru.otus.spring.integration.utils.DateHelper;
 import java.util.ArrayList;
 import java.util.List;
 
-@Service
 @Slf4j
+@Service
+@RequiredArgsConstructor
 public class RatesServiceImp implements RatesService {
+
+    private final ReceiverCbrRepository receiverCbrRepository;
 
     @Override
     public List<RateDto> convert(ValCurs valCurs) {
@@ -38,6 +43,11 @@ public class RatesServiceImp implements RatesService {
         delay();
         log.info("Convert {} done", valCurs.getDate());
         return currencyRateDtoList;
+    }
+
+    @Override
+    public void saveToDb(RateDto rateDto) {
+        receiverCbrRepository.saveRateWithHistory(rateDto);
     }
 
     private static void delay() {
