@@ -22,7 +22,7 @@ spring:
 
   datasource:
     driverClassName: org.postgresql.Driver
-    url: jdbc:postgresql://${HDB_HOST:localhost}:${HDB_PORT:5432}/${HDB_DATABASE:spimex_db}
+    url: jdbc:postgresql://${HDB_HOST:localhost}:${HDB_PORT:5432}/${HDB_DATABASE:cbr_db}
     username: ${HDB_USER:spx_cbr_user}
     password: ${HDB_PASSWORD:adminpass}
     hikari:

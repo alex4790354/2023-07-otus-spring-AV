@@ -9,7 +9,7 @@ import java.time.format.DateTimeFormatter;
 
 @Data
 @AllArgsConstructor
-public class RateDto {
+public class CurrencyRateDto {
 
     @JsonProperty("id")
     private String id;

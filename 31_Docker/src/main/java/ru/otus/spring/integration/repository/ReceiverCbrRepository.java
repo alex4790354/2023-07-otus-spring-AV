@@ -6,7 +6,7 @@ import org.apache.ibatis.type.OffsetDateTimeTypeHandler;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import ru.otus.spring.integration.domain.CurrencyDto;
-import ru.otus.spring.integration.domain.RateDto;
+import ru.otus.spring.integration.domain.CurrencyRateDto;
 import ru.otus.spring.integration.domain.RateDtoDb;
 import java.util.List;
 
@@ -43,8 +43,8 @@ public interface ReceiverCbrRepository {
 
 
     @Transactional
-    default void saveRatesListWithHistory(List<RateDto> ratesList) {
-        for (RateDto rate : ratesList) {
+    default void saveRatesListWithHistory(List<CurrencyRateDto> ratesList) {
+        for (CurrencyRateDto rate : ratesList) {
             RateDtoDb currentRate = findCurrentRateById(rate.getId());
             if (currentRate == null) {
                 insertNewRate(rate);
@@ -59,7 +59,8 @@ public interface ReceiverCbrRepository {
         }
     }
 
-    default void saveRateWithHistory(RateDto rate) {
+
+    default void saveRateWithHistory(CurrencyRateDto rate) {
 
         RateDtoDb currentRate = findCurrentRateById(rate.getId());
         if (currentRate == null) {
@@ -85,7 +86,7 @@ public interface ReceiverCbrRepository {
                 INSERT INTO cbr.currency_rate (id, effective_date, nominal, first_crncy, second_crncy, value)
                 VALUES (#{rate.id}, TO_DATE(#{rate.dateAsString}, 'YYYY-MM-DD'), #{rate.nominal}, #{rate.charCode}, 'RUB', #{rate.value})
              """)
-    void insertNewRate(@Param("rate") RateDto rate);
+    void insertNewRate(@Param("rate") CurrencyRateDto rate);
 
 
     @Update("""
@@ -97,7 +98,7 @@ public interface ReceiverCbrRepository {
                         update_time = NOW()
                 WHERE id = #{rate.id}
             """)
-    void updateCurrentRate(@Param("rate") RateDto rate);
+    void updateCurrentRate(@Param("rate") CurrencyRateDto rate);
 
 
     @Insert("""
@@ -109,7 +110,7 @@ public interface ReceiverCbrRepository {
                     value = EXCLUDED.value,
                     archived_at = NOW()
             """)
-    void upsertRateHistory(@Param("rate") RateDto rate);
+    void upsertRateHistory(@Param("rate") CurrencyRateDto rate);
 
 
     @Insert("""

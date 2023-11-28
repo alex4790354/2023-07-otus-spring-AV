@@ -8,7 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import ru.otus.spring.integration.constant.DateFormatConstant;
 import ru.otus.spring.integration.controller.FeingClientCbr;
-import ru.otus.spring.integration.domain.RateDto;
+import ru.otus.spring.integration.domain.CurrencyRateDto;
 import ru.otus.spring.integration.utils.DateHelper;
 import java.util.Collection;
 import java.util.concurrent.ForkJoinPool;
@@ -26,10 +26,9 @@ public class FeedServiceImp implements FeedService {
     @Override
     public void startGenerateOrdersLoop() {
 
-        String vRequestDateAsString = new DateHelper().getTodateDateAsString(DateFormatConstant.CBR_REQUEST.getValue());
-
         ForkJoinPool pool = ForkJoinPool.commonPool();
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 8; i++) {
+            String vRequestDateAsString = new DateHelper().getTodateDateAsString(DateFormatConstant.CBR_REQUEST.getValue(), i);
             int num = i + 1;
             pool.execute(() -> {
                 ResponseEntity<ValCurs> valCursResponseEntity = feingClientCbr.feinGetRatesOnDate(vRequestDateAsString);
@@ -38,9 +37,9 @@ public class FeedServiceImp implements FeedService {
                 log.info("{}, New ValCurs.getValute().size(): {}", num,
                         valCursDailyResult.getValute().size()
                         );
-                Collection<RateDto> rates = gateway.process(valCursDailyResult);
+                Collection<CurrencyRateDto> rates = gateway.process(valCursDailyResult);
                 log.info("{}, Ready rates: {}", num, rates.stream()
-                        .map(RateDto::getName)
+                        .map(CurrencyRateDto::getName)
                         .collect(Collectors.joining(",")));
             });
             delay();
@@ -50,7 +49,7 @@ public class FeedServiceImp implements FeedService {
 
     private void delay() {
         try {
-            Thread.sleep(30_000);
+            Thread.sleep(10_000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }

@@ -14,13 +14,13 @@ public class RatesListDto {
 
 
     @JsonProperty("Foreign CurrencyDto Market Lib")
-    private List<RateDto> currencyRateList;
+    private List<CurrencyRateDto> currencyRateList;
 
     public void setRatesFromDailyRateList(ValCurs valCurs) {
-        List<RateDto> currencyRateDtoList = new ArrayList<>();
-        RateDto currencyRateDto;
+        List<CurrencyRateDto> currencyCurrencyRateDtoList = new ArrayList<>();
+        CurrencyRateDto currencyRateDto;
         for (ValCurs.Valute item : valCurs.getValute()) {
-            currencyRateDto = new RateDto(item.getID(),
+            currencyRateDto = new CurrencyRateDto(item.getID(),
                     item.getNumCode(),
                     item.getCharCode(),
                     item.getNominal(),
@@ -31,10 +31,9 @@ public class RatesListDto {
                                                         DateFormatConstant.CBR_RESPONSE.getValue(),
                                                         DateFormatConstant.SPIMEX_DB.getValue())
             );
-            currencyRateDtoList.add(currencyRateDto);
+            currencyCurrencyRateDtoList.add(currencyRateDto);
         }
-        currencyRateList = currencyRateDtoList;
+        currencyRateList = currencyCurrencyRateDtoList;
     }
-
 
 }

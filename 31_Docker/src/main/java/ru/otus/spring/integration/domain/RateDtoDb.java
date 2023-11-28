@@ -12,11 +12,17 @@ import java.time.OffsetDateTime;
 public class RateDtoDb {
 
     protected String id;
+
     protected LocalDate effectiveDate;
+
     protected long nominal;
+
     protected String firstCrncy;
+
     protected String secondCrncy;
+
     protected double value;
+
     protected OffsetDateTime creationTime;
 
 }

@@ -10,16 +10,22 @@ public class CurrencyDto {
 
     @JsonProperty("id")
     protected String id;
+
     @JsonProperty("name_rus")
     protected String nameRus;
+
     @JsonProperty("name_eng")
     protected String nameEng;
+
     @JsonProperty("nominal")
     protected long nominal;
+
     @JsonProperty("parent_code")
     protected String parentCode;
+
     @JsonProperty("frequency")
     protected String frequency;
+
     @JsonProperty("char_code")
     protected String charCode;
 
