@@ -42,6 +42,3 @@ CREATE TABLE IF NOT EXISTS cbr.currency_rate_history (
      CONSTRAINT PK_CURRENCY_RATE_HISTORY PRIMARY KEY (id, effective_date),
      CONSTRAINT FK_CURRENCY_RATE_HISTORY FOREIGN KEY (id) REFERENCES cbr.currency (id)
 );
-
-SELECT * FROM cbr.currency;
-

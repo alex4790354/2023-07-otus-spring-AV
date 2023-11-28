@@ -1,3 +1,7 @@
+DELETE FROM cbr.currency_rate_history WHERE id IS NOT NULL;
+DELETE FROM cbr.currency_rate WHERE id IS NOT NULL;
+DELETE FROM cbr.currency WHERE id IS NOT NULL;
+
 INSERT INTO cbr.currency(id, frequency, name_rus, name_eng, nominal, parent_code) VALUES
 ('R01010', 'DAILY', 'Австралийский доллар', 'Australian Dollar', 10, 'R01230'),
 ('R01015', 'DAILY', 'Австрийский шиллинг', 'Austrian Shilling', 1, 'R01010'),

@@ -5,4 +5,4 @@ FeedServiceImp:
 - get List of ValCurs 
 - load to IntegrationFlow
 - convert to List of CurrencyDto
-- Load to DB.
+- Load to DB using 
