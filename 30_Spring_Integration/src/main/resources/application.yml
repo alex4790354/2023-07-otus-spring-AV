@@ -13,3 +13,22 @@ feign:
   retryAfterException:
     maxAttempts: ${CBR_SERVICE_MAX_ATTEMPTS_EXCEPTION:3}
     delay: ${CBR_SERVICE_DELAY_EXCEPTION:180000}
+
+spring:
+  application:
+    name: 31Docker
+  main:
+    allow-bean-definition-overriding: true
+
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://${HDB_HOST:localhost}:${HDB_PORT:5432}/${HDB_DATABASE:cbr_db}
+    username: ${HDB_USER:spx_cbr_user}
+    password: ${HDB_PASSWORD:adminpass}
+    hikari:
+      maximumPoolSize: ${DB_MAX_CONNECTIONS:3}
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+

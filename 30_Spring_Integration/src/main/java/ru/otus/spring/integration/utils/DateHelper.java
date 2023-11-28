@@ -22,8 +22,10 @@ public class DateHelper {
         return date.format(DateTimeFormatter.ofPattern(requiredFormat));
     }
 
-    public String getTodateDateAsString(String requiredFormat) {
-        return LocalDate.now().format(DateTimeFormatter.ofPattern(requiredFormat));
+    public String getTodateDateAsString(String requiredFormat, int minusDays) {
+        return LocalDate.now()
+                .minusDays(minusDays)
+                .format(DateTimeFormatter.ofPattern(requiredFormat));
     }
 
 }
