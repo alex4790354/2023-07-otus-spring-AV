@@ -27,7 +27,7 @@
 
     <modules>
 
-
+        <module>31_Docker_From_16_Spring_MVC</module>
     </modules>
 
 </project>
