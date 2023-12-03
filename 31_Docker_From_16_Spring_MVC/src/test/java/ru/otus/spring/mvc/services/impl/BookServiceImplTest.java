@@ -83,7 +83,7 @@ class BookServiceImplTest {
     @DisplayName("Should be able to insert new book-1")
     @Test
     void shouldInsertNewBook() {
-        Book book = new Book(0L, new Author(LONG_ONE, "Михаил Булгаков"), new Genre(LONG_ONE, "Роман"), "Мастер и Маргарита");
+        Book book = new Book(0L, new Author(LONG_ONE, "Михаил Булгаков - new"), new Genre(LONG_ONE, "Роман"), "Мастер и Маргарита");
         Book savedBook = bookService.saveBook(book);
         assertThat(savedBook.getId()).isGreaterThan(0);
         assertEquals(book.getAuthor(), savedBook.getAuthor());

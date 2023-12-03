@@ -1,4 +1,7 @@
-INSERT INTO author(name) VALUES ('Михаил Булгаков');
+--liquibase formatted sql
+--changeset Alexander_V:v01_002
+
+INSERT INTO author(name) VALUES ('Михаил Булгаков - init');
 INSERT INTO author(name) VALUES ('Антуан де Сент-Экзюпери');
 INSERT INTO author(name) VALUES ('Александр Дюма');
 INSERT INTO author(name) VALUES ('Аркадий и Борис Стругацкие');

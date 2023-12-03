@@ -38,6 +38,7 @@ class AuthorServiceImplTest {
     void shouldGetCorrectAuthor() {
         Author author = authorService.findById(AUTHOR_ONE_ID);
         assertEquals(AUTHOR_ONE_ID, author.getId());
+        System.out.println(author.getName());
         assertEquals(AUTHOR_ONE_NAME, author.getName());
     }
 
