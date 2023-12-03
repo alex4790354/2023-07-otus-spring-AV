@@ -1,3 +1,6 @@
+--liquibase formatted sql
+--changeset Alexander_V:v01_002
+
 INSERT INTO author(name) VALUES ('Михаил Булгаков-test');
 INSERT INTO author(name) VALUES ('Антуан де Сент-Экзюпери');
 INSERT INTO author(name) VALUES ('Александр Дюма');
@@ -46,3 +49,4 @@ INSERT INTO note(book_id, note) VALUES (10, 'Note-10.1 - Отель');
 INSERT INTO note(book_id, note) VALUES (10, 'Note-10.2 - Отель');
 INSERT INTO note(book_id, note) VALUES (10, 'Note-10.3 - Отель');
 INSERT INTO note(book_id, note) VALUES (10, 'Note-10.4 - Отель');
+
