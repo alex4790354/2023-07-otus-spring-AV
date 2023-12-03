@@ -7,11 +7,11 @@ import org.springframework.context.ApplicationContext;
 
 
 @SpringBootApplication
-public class Spring31Docer {
+public class Spring32Docer {
 
     public static void main(String[] args) {
 
-        ApplicationContext context = SpringApplication.run(Spring31Docer.class);
+        ApplicationContext context = SpringApplication.run(Spring32Docer.class);
 
     }
 
