@@ -8,7 +8,6 @@ import org.springframework.integration.dsl.PollerSpec;
 import org.springframework.integration.dsl.Pollers;
 import org.springframework.integration.dsl.IntegrationFlow;
 import org.springframework.integration.scheduling.PollerMetadata;
-import ru.otus.spring.integration.domain.CurrencyRateDto;
 import ru.otus.spring.integration.service.CbrLoadDataService;
 import ru.otus.spring.integration.service.RatesService;
 

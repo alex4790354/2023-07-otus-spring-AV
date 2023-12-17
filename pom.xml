@@ -19,11 +19,14 @@
 
     <properties>
         <java.version>17</java.version>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <modules>
-        <module>30_Spring_Integration</module>
+        <module>S30_Spring_Integration</module>
         <module>S32_Docker_From_16_Spring_MVC</module>
+        <module>S33_SpringB_Actuator</module>
     </modules>
 </project>
