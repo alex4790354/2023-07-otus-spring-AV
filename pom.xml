@@ -4,15 +4,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <parent>
+    <!--<parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>3.1.5</version>
         <relativePath/>
-    </parent>
+    </parent>-->
 
     <groupId>ru.otus</groupId>
-    <name>2023-07-otus_spring_AV</name>
     <artifactId>2023-07-otus_spring_AV</artifactId>
     <version>1.0</version>
     <description>Spring Boot Otus demo project</description>
@@ -23,10 +22,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
-
-
     <modules>
         <module>30_Spring_Integration</module>
+        <module>S32_Docker_From_16_Spring_MVC</module>
     </modules>
-
 </project>
