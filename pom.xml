@@ -22,11 +22,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
-
-
     <modules>
-
+        <module>30_Spring_Integration</module>
         <module>S32_Docker_From_16_Spring_MVC</module>
     </modules>
-
 </project>

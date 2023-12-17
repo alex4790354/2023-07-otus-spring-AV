@@ -235,5 +235,3 @@ nbdist/
 # Ignore all local history of files
 .history
 
-# End of https://www.gitignore.io/api/java,macos,maven,eclipse,netbeans,intellij,visualstudiocode
-/31_Docker/src/main/java/META-INF/JAXB/
