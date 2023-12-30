@@ -12,7 +12,7 @@
     </parent>-->
 
     <groupId>ru.otus</groupId>
-    <artifactId>2023-07-otus_spring_AV</artifactId>
+    <artifactId>2023-07-otus-spring-AV</artifactId>
     <version>1.0</version>
     <description>Spring Boot Otus demo project</description>
     <packaging>pom</packaging>
