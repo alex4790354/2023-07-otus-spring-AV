@@ -16,7 +16,7 @@ feign:
 
 spring:
   application:
-    name: 31Docker
+    name: S30_Spring_Integration
   main:
     allow-bean-definition-overriding: true
 

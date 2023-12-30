@@ -21,8 +21,8 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <!-- TODO: Check, почему не работает версия 3.1.5 -->
-        <version>3.2.1</version>
-        <!--<version>2.7.18</version>-->
+        <!--<version>3.2.1</version>-->
+        <version>2.7.18</version>
         <relativePath/>
     </parent>
 
