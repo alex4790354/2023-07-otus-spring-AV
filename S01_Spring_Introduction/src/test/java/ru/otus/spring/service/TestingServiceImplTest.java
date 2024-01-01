@@ -1,5 +1,4 @@
-package ru.fedbon.service;
-
+package ru.otus.spring.service;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -9,7 +8,6 @@ import ru.otus.spring.dao.QuestionDao;
 import ru.otus.spring.domain.Answer;
 import ru.otus.spring.domain.Question;
 import ru.otus.spring.utils.Stringifier;
-import ru.otus.spring.service.TestingServiceImpl;
 import java.util.Arrays;
 import static org.mockito.Mockito.*;
 

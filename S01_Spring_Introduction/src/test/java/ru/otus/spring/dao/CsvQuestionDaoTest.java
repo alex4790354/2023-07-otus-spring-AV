@@ -1,5 +1,4 @@
-package ru.fedbon.dao;
-
+package ru.otus.spring.dao;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -7,7 +6,6 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import java.util.List;
 import ru.otus.spring.domain.Question;
-import ru.otus.spring.dao.CsvQuestionDao;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.Mockito.when;
