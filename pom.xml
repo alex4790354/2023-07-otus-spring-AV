@@ -19,6 +19,7 @@
         <module>S01_Spring_Introduction</module>
         <module>S02_Spring_App_configuration</module>
         <module>S05_Spring_Boot</module>
+        <module>S07_Spring_Shell</module>
     </modules>
 
     <packaging>pom</packaging>

@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>ru.otus.springboot</groupId>
-    <artifactId>S05_Spring_Boot</artifactId>
+    <groupId>ru.otus.springshell.</groupId>
+    <artifactId>S07_Spring_Shell</artifactId>
     <version>1.0</version>
 
     <properties>
@@ -25,6 +25,7 @@
         <opencsv.version>5.9</opencsv.version>
         <slf4j-api.version>2.0.10</slf4j-api.version>
         <snakeyaml.version>2.0</snakeyaml.version>
+        <spring-shell-starter.version>3.1.6</spring-shell-starter.version>
     </properties>
 
     <dependencies>
@@ -45,6 +46,12 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
             <version>${spring-context.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.shell</groupId>
+            <artifactId>spring-shell-starter</artifactId>
+            <version>${spring-shell-starter.version}</version>
         </dependency>
 
         <dependency>

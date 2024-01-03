@@ -1,6 +1,7 @@
-package ru.otus.springboot.domain;
+package ru.otus.springshell.domain;
 
 import lombok.Data;
+
 import java.util.List;
 
 
