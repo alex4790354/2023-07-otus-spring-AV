@@ -36,31 +36,34 @@ public class BookDaoJdbc implements BookDao {
 
     @Override
     public List<Book> getAll() {
-        return npJdbc.query("SELECT b.id id, " +
-                        " b.author_id author_id, " +
-                        " b.genre_id genre_id, " +
-                        " b.name book_name, " +
-                        " a.name author_name, " +
-                        " g.name genre_name " +
-                        " FROM book b " +
-                        " INNER JOIN author a ON a.id = b.author_id " +
-                        " INNER JOIN genre  g ON b.genre_id = g.id ",
+        return npJdbc.query("""
+                        SELECT b.id id,
+                        b.author_id author_id,
+                        b.genre_id genre_id,
+                        b.name book_name,
+                        a.name author_name,
+                        g.name genre_name
+                        FROM book b
+                        INNER JOIN author a ON a.id = b.author_id
+                        INNER JOIN genre  g ON b.genre_id = g.id """,
                 new BookMapper());
     }
 
     @Override
     public Book getById(long bookId) {
         Map<String, Object> params = Collections.singletonMap("book_id", bookId);
-        return npJdbc.queryForObject("SELECT b.id id, " +
-                " b.author_id author_id, " +
-                " b.genre_id genre_id, " +
-                " b.name book_name, " +
-                " a.name author_name, " +
-                " g.name genre_name " +
-                " FROM book b" +
-                " INNER JOIN author a ON a.id = b.author_id " +
-                " INNER JOIN genre  g ON b.genre_id = g.id " +
-                " WHERE b.id = :book_id ", params, new BookMapper());
+        return npJdbc.queryForObject(""" 
+                SELECT b.id id, 
+                b.author_id author_id, 
+                b.genre_id genre_id, 
+                b.name book_name, 
+                a.name author_name, 
+                g.name genre_name 
+                FROM book b
+                INNER JOIN author a ON a.id = b.author_id 
+                INNER JOIN genre  g ON b.genre_id = g.id 
+                WHERE b.id = :book_id"""
+                , params, new BookMapper());
     }
 
     @Override
