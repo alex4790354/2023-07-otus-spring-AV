@@ -21,6 +21,7 @@
         <module>S05_Spring_Boot</module>
         <module>S07_Spring_Shell</module>
         <module>S08_DAO_Spring_JDBC</module>
+        <module>S09_DAO_Spring_JDBC</module>
     </modules>
 
     <packaging>pom</packaging>

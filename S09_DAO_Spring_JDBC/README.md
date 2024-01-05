@@ -1,4 +1,4 @@
-# S08-DAO-Spring-JDBC Vaselev v.1 with postgresSQL & Docker
+# S08-DAO-Spring-JDBC Vaselev v.2 (H2)
 Otus Spring Sandbox
 
 Create an application that stores information about books in a library
