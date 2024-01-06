@@ -23,6 +23,7 @@
         <module>S08_DAO_Spring_JDBC</module>
         <module>S09_DAO_Spring_JDBC</module>
         <module>S11_JPA_Hibernate</module>
+        <module>S13_Spring_Data_JPA</module>
     </modules>
 
     <packaging>pom</packaging>
