@@ -24,6 +24,7 @@
         <module>S09_DAO_Spring_JDBC</module>
         <module>S11_JPA_Hibernate</module>
         <module>S13_Spring_Data_JPA</module>
+        <module>S18_Spring_MVC_View</module>
     </modules>
 
     <packaging>pom</packaging>
