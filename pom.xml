@@ -24,8 +24,15 @@
         <module>S09_DAO_Spring_JDBC</module>
         <module>S11_JPA_Hibernate</module>
         <module>S13_Spring_Data_JPA</module>
+        <module>S15_Spring_NoSQL_DB</module>
         <module>S18_Spring_MVC_View</module>
     </modules>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.1.5</version>
+    </parent>
 
     <packaging>pom</packaging>
 
