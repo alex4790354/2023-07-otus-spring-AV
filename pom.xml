@@ -26,6 +26,7 @@
         <module>S13_Spring_Data_JPA</module>
         <module>S15_Spring_NoSQL_DB</module>
         <module>S18_Spring_MVC_View</module>
+        <module>S19_Spring_MVC_View_AJAX</module>
     </modules>
 
     <parent>
