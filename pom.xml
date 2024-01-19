@@ -29,6 +29,7 @@
         <module>S19_Spring_MVC_View_AJAX</module>
         <module>S22_Spring_WebFlux</module>
         <module>S24_Spring_Security</module>
+        <module>S26_Spring_Security_ACL</module>
     </modules>
 
     <parent>

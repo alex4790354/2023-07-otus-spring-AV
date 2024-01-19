@@ -12,7 +12,7 @@ spring:
 mongock:
   runner-type: "InitializingBean"
   change-logs-scan-package:
-    - ru.fedbon.mongock.changelog
+    - ru.otus.securityacl.mongock.changelog
   mongo-db:
     write-concern:
       journal: false
