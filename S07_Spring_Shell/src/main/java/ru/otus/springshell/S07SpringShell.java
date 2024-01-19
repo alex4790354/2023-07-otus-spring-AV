@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 @SpringBootApplication
-public class S05SpringShell {
+public class S07SpringShell {
     public static void main(String[] args) throws BeansException {
-        SpringApplication.run(S05SpringShell.class, args);
+        SpringApplication.run(S07SpringShell.class, args);
     }
 }
