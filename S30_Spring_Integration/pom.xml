@@ -12,9 +12,6 @@
         <!--<relativePath></relativePath>-->
     </parent>
 
-    <artifactId>S30_Spring_Integration</artifactId>
-    <name>S30_Spring_Integration</name>
-
     <!--<parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -25,8 +22,8 @@
     </parent>-->
 
     <properties>
-    <!--<maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>-->
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
         <snakeyaml.version>2.0</snakeyaml.version>
         <apache.commons.version>3.12.0</apache.commons.version>
         <checkstyle-plugin.version>3.1.2</checkstyle-plugin.version>
@@ -35,11 +32,14 @@
         <org.mybatis.spring.boot.version>3.0.0</org.mybatis.spring.boot.version>
     </properties>
 
+    <artifactId>S30_Spring_Integration</artifactId>
+    <name>S30_Spring_Integration</name>
 
     <dependencies>
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
+            <version>33.0.0-jre</version>
         </dependency>
 
         <dependency>
@@ -76,7 +76,7 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
-            <version>4.1.0</version>
+            <version>4.0.6</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>

@@ -31,6 +31,8 @@
         <module>S24_Spring_Security</module>
         <module>S26_Spring_Security_ACL</module>
         <module>S27_Spring_Batch</module>
+        <module>S30_Spring_Integration</module>
+        <module>S32_Docker_From_16_Spring_MVC</module>
     </modules>
 
     <parent>
