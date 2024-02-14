@@ -15,7 +15,7 @@ http://localhost:8080/actuator/health/bookCnt
 
 Use metrics, healthchecks and logfile
 
-=================================================
+========================================================================
 
 Проверка наличия книг в библиотеке   
 http://localhost:8080/actuator/health/bookCnt   
