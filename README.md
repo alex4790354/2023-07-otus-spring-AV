@@ -14,7 +14,7 @@ This task can be performed based on one of the implemented Web applications:
 4) There is no need to implement a UI for data from Spring Boot Actuator.
 
 
-==============================
+========================================================================
 
 Использовать метрики, healthchecks и logfile
 
