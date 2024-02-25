@@ -33,6 +33,7 @@
         <module>S27_Spring_Batch</module>
         <module>S30_Spring_Integration</module>
         <module>S32_Docker_From_16_Spring_MVC</module>
+        <module>S33_SpringB_Actuator</module>
     </modules>
 
     <parent>
